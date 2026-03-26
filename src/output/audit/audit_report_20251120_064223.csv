@@ -1,0 +1,12 @@
+﻿shipment_id,issue_type,column,details
+5315258052,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315623541,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315717696,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315304673,Low Price,unit_price,Suspiciously low unit price (1.19)
+5315258052,Low Price,unit_price,Suspiciously low unit price (0.02)
+5315786407,Low Price,unit_price,Suspiciously low unit price (1.17)
+5315623541,Low Price,unit_price,Suspiciously low unit price (0.02)
+5315717696,Low Price,unit_price,Suspiciously low unit price (0.01)
+5315709090,Low Price,unit_price,Suspiciously low unit price (1.17)
+5315584116,Low Price,unit_price,Suspiciously low unit price (0.35)
+4233648543,Low Price,unit_price,Suspiciously low unit price (0.43)

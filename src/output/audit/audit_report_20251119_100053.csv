@@ -1,0 +1,35 @@
+﻿shipment_id,issue_type,column,details
+5390600,Duplicate,shipment_id,Appears multiple times
+5390585,Duplicate,shipment_id,Appears multiple times
+5390572,Duplicate,shipment_id,Appears multiple times
+5390573,Duplicate,shipment_id,Appears multiple times
+5390557,Duplicate,shipment_id,Appears multiple times
+5310503556,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390600,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390600,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390600,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390601,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390585,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390585,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390572,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390573,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390572,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390573,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390572,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5026540,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390557,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5390557,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4044986248,Low Price,unit_price,Suspiciously low unit price (25.0)
+4044953472,Low Price,unit_price,Suspiciously low unit price (49.0)
+4044941258,Low Price,unit_price,Suspiciously low unit price (18.0)
+7671908893,Low Price,unit_price,Suspiciously low unit price (39.38)
+5305979335,Low Price,unit_price,Suspiciously low unit price (15.5)
+5306548536,Low Price,unit_price,Suspiciously low unit price (15.5)
+5310436076,Low Price,unit_price,Suspiciously low unit price (36.0)
+5390600,Low Price,unit_price,Suspiciously low unit price (31.58)
+5390601,Low Price,unit_price,Suspiciously low unit price (5.45)
+4228154158,Low Price,unit_price,Suspiciously low unit price (23.34)
+4228263708,Low Price,unit_price,Suspiciously low unit price (23.34)
+5390573,Low Price,unit_price,Suspiciously low unit price (33.35)
+5390572,Low Price,unit_price,Suspiciously low unit price (36.72)
+5390557,Low Price,unit_price,Suspiciously low unit price (46.45)

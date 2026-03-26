@@ -1,0 +1,4 @@
+﻿shipment_id,issue_type,column,details
+3700339822,Duplicate,shipment_id,Appears multiple times
+3699957265,Duplicate,shipment_id,Appears multiple times
+3700578510,Duplicate,shipment_id,Appears multiple times

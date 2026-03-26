@@ -1,0 +1,16 @@
+services:
+  maco-automation:
+    build: .
+    container_name: maco_pipeline
+    ports:
+      - "8000:8000"
+    # This explicitly maps the variables into the container
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    # Also load the file directly as a fallback
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output
+    restart: always

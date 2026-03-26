@@ -1,0 +1,93 @@
+﻿shipment_id,issue_type,column,details
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,product_description,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,buyer_country,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Missing Value,hs_code,Empty or invalid value
+,Duplicate,shipment_id,Appears multiple times
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Format,hs_code,HS code contains invalid characters: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+,Invalid Length,hs_code,HS code too short: nan
+904015516.0,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)
+,Low Price,unit_price,Suspiciously low unit price (0.0)

@@ -1,0 +1,5 @@
+﻿shipment_id,issue_type,column,details
+B102025210007298,Duplicate,shipment_id,Appears multiple times
+B102025209014583,Duplicate,shipment_id,Appears multiple times
+RICFT1471500,Invalid Length,hs_code,HS code too short: 8428
+RICFT1471500,Low Price,unit_price,Suspiciously low unit price (0.0)

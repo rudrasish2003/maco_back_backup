@@ -1,0 +1,446 @@
+﻿shipment_id,issue_type,column,details
+SHIPMENT ID,Invalid Format,hs_code,HS code contains invalid characters: HS CODE
+5316339886,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313209940,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316341753,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316384365,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314629348,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313828825,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313156543,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313203248,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313350409,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315356377,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315320720,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313273148,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313339522,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313202236,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313267910,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317394542,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313323642,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313365818,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313260004,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313247380,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313334719,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313334607,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315259795,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313230259,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314415169,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314378236,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314499417,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314542256,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314315934,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314568543,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314614100,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317393418,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317393213,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312016749,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315902904,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316017179,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316033049,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316026388,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315917926,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317391568,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312752657,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312568876,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316515051,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315645150,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316496693,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316491184,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316490997,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316563521,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316610431,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316688399,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316653720,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316473040,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316472985,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316159532,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315968725,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315798348,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316187121,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316846435,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316267492,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316245284,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314720719,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314716549,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314714742,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314709635,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314707559,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314749411,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313464350,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313664557,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313663111,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316748168,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316737000,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316773278,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316295775,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316228980,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316316356,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234398039,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233814521,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+9475836138,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234414983,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234891659,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235820080,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233832404,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235921917,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232946341,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235328773,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234333204,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232939383,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234487310,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234869770,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232663027,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233438899,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233715482,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235283837,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235281676,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233327038,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232583206,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232757204,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232794146,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4236261595,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232675106,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232729734,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235417511,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233840216,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234415700,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232774192,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234332226,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234349707,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235385856,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234287510,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232475849,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234098976,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4230871357,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4230766301,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232452183,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234233981,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234031201,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232296140,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232332497,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4230878319,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232524147,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232456960,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233489890,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233483850,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234165494,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232493447,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312298460,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313249075,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316899154,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316920985,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316964849,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316963073,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316956276,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316952866,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316950596,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316709614,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316717886,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313289373,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313323008,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315629856,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315828273,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316225248,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315639998,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315809598,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315668453,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315707211,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315660317,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316631661,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5311722141,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5311781453,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316748796,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232246799,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232579129,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233345692,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234342664,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233308261,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233406077,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233623615,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232272512,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232570266,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317321678,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315248617,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316366728,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313256817,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316410877,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313287382,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315252492,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315100589,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313274416,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313921892,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316209533,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313200313,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313290791,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316916337,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315220237,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316717587,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316939888,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316938259,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316929213,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312910207,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316876159,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312391616,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313311553,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315366964,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317562818,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317524683,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317385372,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315031473,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312247292,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313048359,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312377234,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313349882,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313201805,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313308754,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317587247,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316118927,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316618992,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312574191,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316680160,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316181027,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315781576,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316119380,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316622179,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314534480,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315670295,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314341937,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314064813,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316233383,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314305557,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314269142,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316999145,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315779772,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315802497,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312600418,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314599084,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315488097,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315485435,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314344152,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314403776,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314532980,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314359660,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312108085,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316027341,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316183370,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312780947,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5317089367,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312614716,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315895678,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314324908,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314347883,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314319027,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312731492,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312452265,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316651170,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316522566,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314260870,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316495178,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315934179,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315731487,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314202820,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316593958,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316648699,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314098355,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314062170,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314074926,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316578508,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314259082,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316053727,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316112334,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314613141,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314510787,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314337539,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314430166,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316132888,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316762361,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313590878,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313475504,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313609204,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313582807,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313540341,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313538255,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313570289,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313699142,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313630944,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313628761,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313628093,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313621009,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313564891,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313560104,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313558647,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313663291,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313652046,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316772391,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5311501523,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313544730,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314811975,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314681884,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313527893,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316319533,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313529206,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316196151,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313618557,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313560986,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313530076,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316296892,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233982244,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233585516,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233379038,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233864639,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233302084,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235248514,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233720713,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235197497,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235932431,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235165873,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233369101,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233319621,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234857367,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234404443,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233456583,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235191237,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235113202,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235812234,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4236290911,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232034873,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233379945,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232658675,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233351847,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235397355,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233327946,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232640338,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233820546,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233461098,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232717333,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233363177,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233819284,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4231083276,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232692697,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232665705,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233796764,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233821424,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233877715,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235769998,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4231879717,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4230988907,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232841357,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235101309,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234617216,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232871598,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234839587,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235270050,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235268652,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235860572,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4236261123,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233425727,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233810047,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233369499,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233368731,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235294638,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233710650,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233297991,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232621548,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233738361,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233737885,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233642838,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233401962,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233334474,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4231036850,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235368216,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233297766,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232458214,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234047397,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234138246,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235597164,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234209075,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4230811464,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234259135,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232539673,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232530190,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233493771,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234018418,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232492434,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235730825,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234027547,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234298157,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234241722,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232525380,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232516513,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4234302613,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232545081,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232363527,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232362385,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232558245,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232529923,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232440413,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313262938,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5315425764,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316365488,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316381699,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316371920,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316222689,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5312874819,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316170203,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316104610,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316155574,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316126782,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316510772,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316492004,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316622404,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5316662715,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5313628994,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235265566,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4235254747,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233459353,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233453309,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233415468,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4233412582,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4232435887,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+5314629348,Low Price,unit_price,Suspiciously low unit price (48.98)
+5313828825,Low Price,unit_price,Suspiciously low unit price (48.98)
+5313156543,Low Price,unit_price,Suspiciously low unit price (43.43)
+5313203248,Low Price,unit_price,Suspiciously low unit price (48.98)
+5314614100,Low Price,unit_price,Suspiciously low unit price (1.81)
+5317393213,Low Price,unit_price,Suspiciously low unit price (0.11)
+4233327038,Low Price,unit_price,Suspiciously low unit price (39.0)
+4232675106,Low Price,unit_price,Suspiciously low unit price (29.49)
+SHIPMENT ID,Low Price,unit_price,Suspiciously low unit price (0.0)
+5316899154,Low Price,unit_price,Suspiciously low unit price (19.98)
+5316631661,Low Price,unit_price,Suspiciously low unit price (1.02)
+4233345692,Low Price,unit_price,Suspiciously low unit price (4.09)
+4232272512,Low Price,unit_price,Suspiciously low unit price (4.06)
+4232570266,Low Price,unit_price,Suspiciously low unit price (19.3)
+5315248617,Low Price,unit_price,Suspiciously low unit price (23.57)
+5313274416,Low Price,unit_price,Suspiciously low unit price (9.22)
+5313921892,Low Price,unit_price,Suspiciously low unit price (32.2)
+5313308754,Low Price,unit_price,Suspiciously low unit price (49.05)
+5316118927,Low Price,unit_price,Suspiciously low unit price (0.1)
+5314403776,Low Price,unit_price,Suspiciously low unit price (47.19)
+5314532980,Low Price,unit_price,Suspiciously low unit price (47.19)
+5314324908,Low Price,unit_price,Suspiciously low unit price (0.83)
+5314319027,Low Price,unit_price,Suspiciously low unit price (0.83)
+5316651170,Low Price,unit_price,Suspiciously low unit price (12.84)
+5316522566,Low Price,unit_price,Suspiciously low unit price (46.08)
+5316296892,Low Price,unit_price,Suspiciously low unit price (45.9)
+4233982244,Low Price,unit_price,Suspiciously low unit price (47.87)
+4235113202,Low Price,unit_price,Suspiciously low unit price (14.51)
+4236290911,Low Price,unit_price,Suspiciously low unit price (5.62)
+4235101309,Low Price,unit_price,Suspiciously low unit price (40.45)
+4234617216,Low Price,unit_price,Suspiciously low unit price (48.54)
+4234839587,Low Price,unit_price,Suspiciously low unit price (42.47)
+4236261123,Low Price,unit_price,Suspiciously low unit price (15.31)
+4233493771,Low Price,unit_price,Suspiciously low unit price (4.46)
+4234018418,Low Price,unit_price,Suspiciously low unit price (0.1)
+5313262938,Low Price,unit_price,Suspiciously low unit price (20.36)
+5316365488,Low Price,unit_price,Suspiciously low unit price (2.89)
+5316381699,Low Price,unit_price,Suspiciously low unit price (13.02)
+5316371920,Low Price,unit_price,Suspiciously low unit price (1.53)
+5316222689,Low Price,unit_price,Suspiciously low unit price (13.02)
+5316170203,Low Price,unit_price,Suspiciously low unit price (13.14)
+5316104610,Low Price,unit_price,Suspiciously low unit price (7.66)
+5316155574,Low Price,unit_price,Suspiciously low unit price (38.32)
+5316126782,Low Price,unit_price,Suspiciously low unit price (38.32)
+5316510772,Low Price,unit_price,Suspiciously low unit price (2.58)
+4235265566,Low Price,unit_price,Suspiciously low unit price (39.72)
+4235254747,Low Price,unit_price,Suspiciously low unit price (39.72)

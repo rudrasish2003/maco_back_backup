@@ -1,0 +1,79 @@
+﻿shipment_id,issue_type,column,details
+TATU97838700,Missing Value,hs_code,Empty or invalid value
+TATU27838700,Missing Value,hs_code,Empty or invalid value
+TATU97878700,Missing Value,hs_code,Empty or invalid value
+TATU378B8700,Missing Value,hs_code,Empty or invalid value
+1.5012E+13,Duplicate,shipment_id,Appears multiple times
+TATU97838700,Invalid Format,hs_code,HS code contains invalid characters: nan
+TATU27838700,Invalid Format,hs_code,HS code contains invalid characters: nan
+TATU97878700,Invalid Format,hs_code,HS code contains invalid characters: nan
+TATU378B8700,Invalid Format,hs_code,HS code contains invalid characters: nan
+TATU97838700,Invalid Length,hs_code,HS code too short: nan
+TATU27838700,Invalid Length,hs_code,HS code too short: nan
+TATU97878700,Invalid Length,hs_code,HS code too short: nan
+TATU378B8700,Invalid Length,hs_code,HS code too short: nan
+0404201911246699,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+0304202011626089,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2.2012E+14,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1099872163,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+0799467249,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+0285313076,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1141943016,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+6751977606,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+6751984332,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+9201292928,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1021189402,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+7855395978,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+7992510263,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+9456545131,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+6751979398,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+3753352785,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+7855564179,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+0219893179,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+8849381763,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+0130906101,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+3753152499,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+0308201925426550,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1123256750,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1.9072E+15,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1007298470,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+9326502950,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+1071048503,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+3463208378,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+8313065553,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+6305463047,Low Price,unit_price,Suspiciously low unit price (0.0)
+0508201925826818,Low Price,unit_price,Suspiciously low unit price (0.0)
+TATU97838700,Low Price,unit_price,Suspiciously low unit price (0.0)
+TATU27838700,Low Price,unit_price,Suspiciously low unit price (0.0)
+TATU97878700,Low Price,unit_price,Suspiciously low unit price (0.0)
+TATU378B8700,Low Price,unit_price,Suspiciously low unit price (0.0)
+0404201911246699,Low Price,unit_price,Suspiciously low unit price (0.53)
+0304202011626089,Low Price,unit_price,Suspiciously low unit price (0.56)
+2.2012E+14,Low Price,unit_price,Suspiciously low unit price (0.48)
+1099872163,Low Price,unit_price,Suspiciously low unit price (0.28)
+0799467249,Low Price,unit_price,Suspiciously low unit price (0.65)
+0285313076,Low Price,unit_price,Suspiciously low unit price (7.02)
+1141943016,Low Price,unit_price,Suspiciously low unit price (0.31)
+6751977606,Low Price,unit_price,Suspiciously low unit price (6.83)
+6751984332,Low Price,unit_price,Suspiciously low unit price (6.83)
+9201292928,Low Price,unit_price,Suspiciously low unit price (6.75)
+1021189402,Low Price,unit_price,Suspiciously low unit price (0.28)
+7855395978,Low Price,unit_price,Suspiciously low unit price (0.26)
+7992510263,Low Price,unit_price,Suspiciously low unit price (0.25)
+9456545131,Low Price,unit_price,Suspiciously low unit price (5.65)
+6751979398,Low Price,unit_price,Suspiciously low unit price (6.78)
+8849389485,Low Price,unit_price,Suspiciously low unit price (3.79)
+3753352785,Low Price,unit_price,Suspiciously low unit price (0.24)
+7855564179,Low Price,unit_price,Suspiciously low unit price (0.24)
+0219893179,Low Price,unit_price,Suspiciously low unit price (0.24)
+8849381763,Low Price,unit_price,Suspiciously low unit price (0.24)
+0130906101,Low Price,unit_price,Suspiciously low unit price (6.26)
+3753152499,Low Price,unit_price,Suspiciously low unit price (0.24)
+0308201925426550,Low Price,unit_price,Suspiciously low unit price (8.87)
+1123256750,Low Price,unit_price,Suspiciously low unit price (1.13)
+1.9072E+15,Low Price,unit_price,Suspiciously low unit price (8.86)
+1007298470,Low Price,unit_price,Suspiciously low unit price (1.21)
+9326502950,Low Price,unit_price,Suspiciously low unit price (6.23)
+1071048503,Low Price,unit_price,Suspiciously low unit price (1.19)
+3463208378,Low Price,unit_price,Suspiciously low unit price (6.0)
+8313065553,Low Price,unit_price,Suspiciously low unit price (0.25)

@@ -1,0 +1,4 @@
+﻿shipment_id,issue_type,column,details
+4096107783,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4096128966,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+4094826388,Value Mismatch,valueusd,Calculated vs reported value differs by >10%

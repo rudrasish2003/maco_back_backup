@@ -1,0 +1,31 @@
+﻿shipment_id,issue_type,column,details
+950527323,Duplicate,shipment_id,Appears multiple times
+9438073521,Duplicate,shipment_id,Appears multiple times
+4095957996,Duplicate,shipment_id,Appears multiple times
+4095974330,Duplicate,shipment_id,Appears multiple times
+4095975273,Duplicate,shipment_id,Appears multiple times
+4095973368,Duplicate,shipment_id,Appears multiple times
+9439120359,Duplicate,shipment_id,Appears multiple times
+9438132985,Duplicate,shipment_id,Appears multiple times
+9439378835,Duplicate,shipment_id,Appears multiple times
+9439524962,Duplicate,shipment_id,Appears multiple times
+9439373164,Duplicate,shipment_id,Appears multiple times
+9439521439,Duplicate,shipment_id,Appears multiple times
+9439922093,Duplicate,shipment_id,Appears multiple times
+9439394730,Duplicate,shipment_id,Appears multiple times
+9439912418,Duplicate,shipment_id,Appears multiple times
+9439906147,Duplicate,shipment_id,Appears multiple times
+9439982287,Duplicate,shipment_id,Appears multiple times
+9439979314,Duplicate,shipment_id,Appears multiple times
+9439975619,Duplicate,shipment_id,Appears multiple times
+9439392766,Duplicate,shipment_id,Appears multiple times
+9439964776,Duplicate,shipment_id,Appears multiple times
+9439958415,Duplicate,shipment_id,Appears multiple times
+9439956377,Duplicate,shipment_id,Appears multiple times
+9439953538,Duplicate,shipment_id,Appears multiple times
+9439948605,Duplicate,shipment_id,Appears multiple times
+9439946697,Duplicate,shipment_id,Appears multiple times
+9439942235,Duplicate,shipment_id,Appears multiple times
+9439935818,Duplicate,shipment_id,Appears multiple times
+4097222066,Duplicate,shipment_id,Appears multiple times
+9438918326,Low Price,unit_price,Suspiciously low unit price (34.79)

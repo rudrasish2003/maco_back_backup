@@ -1,0 +1,53 @@
+﻿shipment_id,issue_type,column,details
+2677234541,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677686586,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677214796,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677210989,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677598905,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677629745,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677209766,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677562214,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676161175,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676506307,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677527432,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677538117,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677522946,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676343874,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676215424,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676316303,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676158062,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676223115,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676185628,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676342688,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2676409226,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677479242,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677543984,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677466753,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677519794,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677424350,Value Mismatch,valueusd,Calculated vs reported value differs by >10%
+2677234541,Low Price,unit_price,Suspiciously low unit price (0.85)
+2677686586,Low Price,unit_price,Suspiciously low unit price (0.75)
+2677214796,Low Price,unit_price,Suspiciously low unit price (0.58)
+2677210989,Low Price,unit_price,Suspiciously low unit price (0.58)
+2677598905,Low Price,unit_price,Suspiciously low unit price (0.76)
+2677629745,Low Price,unit_price,Suspiciously low unit price (0.76)
+2677209766,Low Price,unit_price,Suspiciously low unit price (0.76)
+2677562214,Low Price,unit_price,Suspiciously low unit price (0.75)
+2676161175,Low Price,unit_price,Suspiciously low unit price (0.75)
+2676506307,Low Price,unit_price,Suspiciously low unit price (0.75)
+2677527432,Low Price,unit_price,Suspiciously low unit price (0.18)
+2677538117,Low Price,unit_price,Suspiciously low unit price (1.1)
+2677522946,Low Price,unit_price,Suspiciously low unit price (1.1)
+2676343874,Low Price,unit_price,Suspiciously low unit price (1.68)
+2676215424,Low Price,unit_price,Suspiciously low unit price (1.98)
+2676316303,Low Price,unit_price,Suspiciously low unit price (4.12)
+2676158062,Low Price,unit_price,Suspiciously low unit price (3.85)
+2676223115,Low Price,unit_price,Suspiciously low unit price (3.79)
+2676185628,Low Price,unit_price,Suspiciously low unit price (3.79)
+2676342688,Low Price,unit_price,Suspiciously low unit price (3.04)
+2676409226,Low Price,unit_price,Suspiciously low unit price (1.68)
+2677479242,Low Price,unit_price,Suspiciously low unit price (3.17)
+2677543984,Low Price,unit_price,Suspiciously low unit price (3.12)
+2677466753,Low Price,unit_price,Suspiciously low unit price (1.43)
+2677519794,Low Price,unit_price,Suspiciously low unit price (1.4)
+2677424350,Low Price,unit_price,Suspiciously low unit price (0.85)

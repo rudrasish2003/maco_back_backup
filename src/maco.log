@@ -1,0 +1,1756 @@
+nohup: ignoring input
+INFO:     Started server process [1735846]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:9002 (Press CTRL+C to quit)
+🔵 Initializing LIFT Context (Inheriting Rotary Patterns)...
+🔌 Fetching Independent Rules for: ['ROTARY_UNION', 'LIFT']...
+✅ Loaded 2376 rules.
+✅ Connected to MongoDB Atlas!
+INFO:     14.195.80.242:59904 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59904 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59904 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59904 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "OPTIONS /process/start-refinement HTTP/1.1" 200 OK
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/27d88c6b-062f-425c-9e7a-05b36bfc1e25_Rotary union_test_new.xlsx | Product Group: ROTARY_UNION
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+Reading as Excel: 
+/application/int_analytics_suite/maco/backend/api/uploads/27d88c6b-062f-425c-9e7
+a-05b36bfc1e25_Rotary union_test_new.xlsx
+File loaded: rows=299 cols=15
+✅ Preprocessing complete — 299 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (ROTARY_UNION Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 299 rows using [ROTARY_UNION] logic...
+🔹 Applying ROTARY_UNION specific logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 299 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 29 issues
+   Detailed report: output/audit/audit_report_20260310_090728.csv
+   Summary report:  output/audit/audit_summary_20260310_090728.csv
+✅ Validation complete — 29 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260310_090728.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260310_090728.csv
+
+🎯 Pipeline completed successfully!
+INFO:     14.195.80.242:61276 - "POST /process/start-refinement HTTP/1.1" 200 OK
+🔄 Job 27d88c6b-062f-425c-9e7a-05b36bfc1e25: Refining rows 50-100...
+INFO:     14.195.80.242:61276 - "OPTIONS /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /process/poll/27d88c6b-062f-425c-9e7a-05b36bfc1e25?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61276 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53087 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53087 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53087 - "OPTIONS /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65079 - "OPTIONS /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65079 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53087 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65025 - "OPTIONS /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/input?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49967 - "OPTIONS /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49967 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?page=2&limit=50 HTTP/1.1" 200 OK
+🔄 Job 27d88c6b-062f-425c-9e7a-05b36bfc1e25: Refining rows 100-150...
+INFO:     14.195.80.242:65025 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/input?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61428 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50486 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61428 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61428 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+🔄 Job 27d88c6b-062f-425c-9e7a-05b36bfc1e25: Refining rows 150-200...
+🔄 Job 27d88c6b-062f-425c-9e7a-05b36bfc1e25: Refining rows 200-250...
+🔄 Job 27d88c6b-062f-425c-9e7a-05b36bfc1e25: Refining rows 250-299...
+💾 Saving Job 27d88c6b-062f-425c-9e7a-05b36bfc1e25 to MongoDB...
+INFO:     167.94.138.200:3620 - "GET / HTTP/1.1" 200 OK
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../pipeline/classifier.py:90: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  df[col].astype(str)
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.200:45342 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.200:18468 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.200:19860 - "GET /.well-known/security.txt HTTP/1.1" 404 Not Found
+INFO:     14.195.80.242:61007 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "OPTIONS /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:62102 - "OPTIONS /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61007 - "GET /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:62102 - "GET /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58506 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58506 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "OPTIONS /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?format=csv HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60942 - "GET /history/123dacb0-4092-4c7e-aeed-1a092c8a650f/processed?format=csv HTTP/1.1" 200 OK
+INFO:     40.124.175.75:52824 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.85:28340 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.85:34360 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.85:49518 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.85:49618 - "GET /security.txt HTTP/1.1" 404 Not Found
+INFO:     3.130.168.2:34476 - "GET / HTTP/1.1" 200 OK
+INFO:     3.130.168.2:53636 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     16.58.56.214:51224 - "GET / HTTP/1.1" 200 OK
+INFO:     16.58.56.214:59932 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.209:61828 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.209:61848 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.209:6880 - "GET /wiki HTTP/1.1" 404 Not Found
+INFO:     14.195.80.242:53224 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "OPTIONS /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63697 - "OPTIONS /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63697 - "GET /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53224 - "GET /history/27d88c6b-062f-425c-9e7a-05b36bfc1e25/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59352 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59352 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59352 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:56475 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:56475 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:56475 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:56475 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:56475 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63935 - "OPTIONS /process/start-refinement HTTP/1.1" 200 OK
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127_Rotary union_test_new.csv | Product Group: ROTARY_UNION
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+detect_encoding: detected => UTF-8-SIG (confidence 1.0)
+File loaded: rows=299 cols=15
+✅ Preprocessing complete — 299 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (ROTARY_UNION Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 299 rows using [ROTARY_UNION] logic...
+🔹 Applying ROTARY_UNION specific logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 299 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 29 issues
+   Detailed report: output/audit/audit_report_20260312_093329.csv
+   Summary report:  output/audit/audit_summary_20260312_093329.csv
+✅ Validation complete — 29 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260312_093329.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260312_093329.csv
+
+🎯 Pipeline completed successfully!
+INFO:     14.195.80.242:63935 - "POST /process/start-refinement HTTP/1.1" 200 OK
+🔄 Job 46ecca8c-9ef7-4ea0-9b08-c2b91f15f127: Refining rows 50-100...
+INFO:     14.195.80.242:51224 - "OPTIONS /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=50 HTTP/1.1" 200 OK
+🔄 Job 46ecca8c-9ef7-4ea0-9b08-c2b91f15f127: Refining rows 100-150...
+INFO:     14.195.80.242:51224 - "OPTIONS /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51224 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+🔄 Job 46ecca8c-9ef7-4ea0-9b08-c2b91f15f127: Refining rows 150-200...
+🔄 Job 46ecca8c-9ef7-4ea0-9b08-c2b91f15f127: Refining rows 200-250...
+INFO:     14.195.80.242:58699 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "OPTIONS /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+🔄 Job 46ecca8c-9ef7-4ea0-9b08-c2b91f15f127: Refining rows 250-299...
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../pipeline/classifier.py:90: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  df[col].astype(str)
+WARNING:  Invalid HTTP request received.
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     199.45.155.111:44718 - "GET / HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57889 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61881 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+💾 Saving Job 46ecca8c-9ef7-4ea0-9b08-c2b91f15f127 to MongoDB...
+INFO:     14.195.80.242:60511 - "GET /process/poll/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127?offset=300 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "POST /token HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     122.160.52.177:31644 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     122.160.52.177:5007 - "OPTIONS /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:20729 - "OPTIONS /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:5007 - "GET /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:20729 - "GET /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:20715 - "OPTIONS /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:3100 - "OPTIONS /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:3100 - "GET /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:20715 - "GET /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:16328 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:16328 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:16328 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     122.160.52.177:16328 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     122.160.52.177:25095 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     122.160.52.177:25095 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     122.160.52.177:6180 - "GET /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:2879 - "GET /history/46ecca8c-9ef7-4ea0-9b08-c2b91f15f127/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     122.160.52.177:21901 - "POST /token HTTP/1.1" 200 OK
+INFO:     122.160.52.177:21901 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     122.160.52.177:21901 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     122.160.52.177:21901 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     122.160.52.177:21901 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     3.130.168.2:51824 - "GET / HTTP/1.1" 200 OK
+INFO:     3.130.168.2:53044 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     3.130.168.2:41492 - "GET / HTTP/1.1" 200 OK
+INFO:     3.130.168.2:49784 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.37:22318 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.37:22330 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.37:49360 - "GET /wiki HTTP/1.1" 404 Not Found
+INFO:     35.82.204.217:34438 - "GET / HTTP/1.0" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     91.196.152.62:54487 - "GET / HTTP/1.1" 200 OK
+INFO:     91.196.152.73:35865 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     185.247.137.58:50357 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     3.143.162.210:54590 - "GET / HTTP/1.1" 200 OK
+INFO:     3.143.162.210:43726 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     49.37.47.8:55563 - "POST /token HTTP/1.1" 422 Unprocessable Entity
+INFO:     49.37.47.8:55563 - "POST /token HTTP/1.1" 401 Unauthorized
+INFO:     49.37.47.8:51338 - "POST /token HTTP/1.1" 200 OK
+INFO:     49.37.47.8:51338 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     49.37.47.8:51338 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     49.37.47.8:51338 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     49.37.47.8:51338 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57147 - "POST /token HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57147 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57147 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     49.37.47.8:49673 - "OPTIONS /process/start-refinement HTTP/1.1" 200 OK
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/9243fd52-a468-4f2d-ac1d-5df7e43da452_Rotary union_test_new.csv | Product Group: ROTARY_UNION
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+detect_encoding: detected => UTF-8-SIG (confidence 1.0)
+File loaded: rows=299 cols=15
+✅ Preprocessing complete — 299 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (ROTARY_UNION Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 299 rows using [ROTARY_UNION] logic...
+🔹 Applying ROTARY_UNION specific logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 299 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 29 issues
+   Detailed report: output/audit/audit_report_20260313_072331.csv
+   Summary report:  output/audit/audit_summary_20260313_072331.csv
+✅ Validation complete — 29 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260313_072331.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260313_072331.csv
+
+🎯 Pipeline completed successfully!
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/fc48c26d-aa7a-478d-aeb3-accfb14e1444_Rotary union_test_new.csv | Product Group: ROTARY_UNION
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+detect_encoding: detected => UTF-8-SIG (confidence 1.0)
+File loaded: rows=299 cols=15
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../pipeline/classifier.py:90: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  df[col].astype(str)
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+✅ Preprocessing complete — 299 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (ROTARY_UNION Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 299 rows using [ROTARY_UNION] logic...
+🔹 Applying ROTARY_UNION specific logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 299 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 29 issues
+   Detailed report: output/audit/audit_report_20260313_072338.csv
+   Summary report:  output/audit/audit_summary_20260313_072338.csv
+✅ Validation complete — 29 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260313_072338.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260313_072338.csv
+
+🎯 Pipeline completed successfully!
+INFO:     49.37.47.8:49673 - "POST /process/start-refinement HTTP/1.1" 200 OK
+🔄 Job 9243fd52-a468-4f2d-ac1d-5df7e43da452: Refining rows 50-100...
+INFO:     49.37.47.8:49673 - "OPTIONS /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:49673 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:49673 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:49673 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "POST /process/start-refinement HTTP/1.1" 200 OK
+🔄 Job fc48c26d-aa7a-478d-aeb3-accfb14e1444: Refining rows 50-100...
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "OPTIONS /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59699 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59699 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59699 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59699 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+🔄 Job 9243fd52-a468-4f2d-ac1d-5df7e43da452: Refining rows 100-150...
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "OPTIONS /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57368 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57368 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+🔄 Job fc48c26d-aa7a-478d-aeb3-accfb14e1444: Refining rows 100-150...
+INFO:     49.37.47.8:57368 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "OPTIONS /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:64248 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:49673 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:63978 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+🔄 Job 9243fd52-a468-4f2d-ac1d-5df7e43da452: Refining rows 150-200...
+🔄 Job fc48c26d-aa7a-478d-aeb3-accfb14e1444: Refining rows 150-200...
+INFO:     49.37.47.8:58725 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=100 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "OPTIONS /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "OPTIONS /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:59528 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+🔄 Job 9243fd52-a468-4f2d-ac1d-5df7e43da452: Refining rows 200-250...
+🔄 Job fc48c26d-aa7a-478d-aeb3-accfb14e1444: Refining rows 200-250...
+INFO:     49.37.47.8:62695 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=150 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "OPTIONS /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "OPTIONS /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:62695 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57143 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57850 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57850 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+🔄 Job 9243fd52-a468-4f2d-ac1d-5df7e43da452: Refining rows 250-299...
+INFO:     49.37.47.8:60865 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "OPTIONS /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+🔄 Job fc48c26d-aa7a-478d-aeb3-accfb14e1444: Refining rows 250-299...
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:53447 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55520 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=200 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "OPTIONS /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:55825 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+💾 Saving Job 9243fd52-a468-4f2d-ac1d-5df7e43da452 to MongoDB...
+💾 Saving Job fc48c26d-aa7a-478d-aeb3-accfb14e1444 to MongoDB...
+INFO:     49.37.47.8:52935 - "GET /process/poll/9243fd52-a468-4f2d-ac1d-5df7e43da452?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57847 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=250 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57847 - "OPTIONS /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=299 HTTP/1.1" 200 OK
+INFO:     49.37.47.8:57847 - "GET /process/poll/fc48c26d-aa7a-478d-aeb3-accfb14e1444?offset=299 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "OPTIONS /history?product_group=LIFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57580 - "GET /history?product_group=LIFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50023 - "OPTIONS /history/1e6d4582-6338-4014-b247-980459aeff8d/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "OPTIONS /history/1e6d4582-6338-4014-b247-980459aeff8d/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50023 - "GET /history/1e6d4582-6338-4014-b247-980459aeff8d/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "GET /history/1e6d4582-6338-4014-b247-980459aeff8d/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "OPTIONS /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "GET /history?product_group=ROTARY_UNION HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "OPTIONS /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59964 - "OPTIONS /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55117 - "GET /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59964 - "GET /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55489 - "OPTIONS /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/input?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63565 - "OPTIONS /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/processed?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:55489 - "GET /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/input?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63565 - "GET /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/processed?page=2&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59597 - "GET /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:52924 - "GET /history/fc48c26d-aa7a-478d-aeb3-accfb14e1444/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64508 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64508 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64508 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64508 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64508 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     3.134.216.108:57308 - "GET / HTTP/1.1" 200 OK
+INFO:     3.134.216.108:59948 - "GET / HTTP/1.1" 200 OK
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../pipeline/classifier.py:90: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  df[col].astype(str)
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     54.183.101.148:51228 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     3.131.220.121:42592 - "GET / HTTP/1.1" 200 OK
+INFO:     3.131.220.121:59488 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     18.97.5.43:39162 - "GET / HTTP/1.1" 200 OK
+INFO:     3.134.216.108:37238 - "GET / HTTP/1.1" 200 OK
+INFO:     3.134.216.108:54088 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.99.234.119:53721 - "GET / HTTP/1.1" 200 OK
+INFO:     3.131.220.121:50530 - "GET / HTTP/1.1" 200 OK
+INFO:     3.131.220.121:34108 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     198.235.24.45:62524 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     16.58.56.214:37950 - "GET / HTTP/1.1" 200 OK
+INFO:     16.58.56.214:43990 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     48.214.144.79:39964 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     14.195.80.242:53071 - "POST /token HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53071 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53071 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53071 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53071 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53071 - "OPTIONS /process/start-refinement HTTP/1.1" 200 OK
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/2283173f-23bd-435e-9dd6-87a80b9569ab_genie test.xlsx | Product Group: CARDAN_SHAFT
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+Reading as Excel: 
+/application/int_analytics_suite/maco/backend/api/uploads/2283173f-23bd-435e-9dd
+6-87a80b9569ab_genie test.xlsx
+File loaded: rows=822 cols=15
+✅ Preprocessing complete — 822 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (CARDAN_SHAFT Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 822 rows using [CARDAN_SHAFT] logic...
+🔹 Applying CARDAN_SHAFT logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 822 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 282 issues
+   Detailed report: output/audit/audit_report_20260318_095223.csv
+   Summary report:  output/audit/audit_summary_20260318_095223.csv
+✅ Validation complete — 282 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260318_095223.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260318_095223.csv
+
+🎯 Pipeline completed successfully!
+INFO:     14.195.80.242:64323 - "GET /admin/products HTTP/1.1" 200 OK
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/66fa657c-a3f5-4c9e-9612-a15d065c6da4_genie test.xlsx | Product Group: CARDAN_SHAFT
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+Reading as Excel: 
+/application/int_analytics_suite/maco/backend/api/uploads/66fa657c-a3f5-4c9e-961
+2-a15d065c6da4_genie test.xlsx
+File loaded: rows=822 cols=15
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../pipeline/classifier.py:90: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  df[col].astype(str)
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+✅ Preprocessing complete — 822 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (CARDAN_SHAFT Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 822 rows using [CARDAN_SHAFT] logic...
+🔹 Applying CARDAN_SHAFT logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 822 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 282 issues
+   Detailed report: output/audit/audit_report_20260318_095250.csv
+   Summary report:  output/audit/audit_summary_20260318_095250.csv
+✅ Validation complete — 282 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260318_095250.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260318_095250.csv
+
+🎯 Pipeline completed successfully!
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 50-100...
+INFO:     14.195.80.242:57042 - "POST /process/start-refinement HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 50-100...
+INFO:     14.195.80.242:57042 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57042 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57121 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 100-150...
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 100-150...
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64802 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60697 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54962 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 150-200...
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 150-200...
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=100 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63595 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:52667 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54833 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 200-250...
+INFO:     14.195.80.242:63367 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 200-250...
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=150 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:50428 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 250-300...
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 250-300...
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=200 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:62882 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63846 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 300-350...
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 300-350...
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=250 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:60319 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49672 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 350-400...
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 350-400...
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=300 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65305 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63864 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 400-450...
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=350 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53427 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 400-450...
+INFO:     14.195.80.242:58545 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59730 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58770 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 450-500...
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=400 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61327 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 450-500...
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61327 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:56699 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51700 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:54515 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53390 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51045 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 500-550...
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 500-550...
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=450 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59188 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:62502 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53176 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 550-600...
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 550-600...
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=500 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49173 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61925 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:51994 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:57665 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:61046 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 600-650...
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 600-650...
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=550 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58538 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:62261 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 650-700...
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=600 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 650-700...
+INFO:     14.195.80.242:58280 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:58280 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64142 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53006 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 700-750...
+INFO:     14.195.80.242:61560 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63172 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 700-750...
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 750-800...
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=650 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:63610 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:59530 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 750-800...
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=700 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:64734 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+🔄 Job 2283173f-23bd-435e-9dd6-87a80b9569ab: Refining rows 800-822...
+INFO:     14.195.80.242:56124 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+🔄 Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4: Refining rows 800-822...
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=750 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:53597 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+💾 Saving Job 2283173f-23bd-435e-9dd6-87a80b9569ab to MongoDB...
+💾 Saving Job 66fa657c-a3f5-4c9e-9612-a15d065c6da4 to MongoDB...
+INFO:     14.195.80.242:49959 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=800 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49959 - "OPTIONS /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=822 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49959 - "GET /process/poll/66fa657c-a3f5-4c9e-9612-a15d065c6da4?offset=822 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49370 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49370 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49370 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49370 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49370 - "OPTIONS /history/2283173f-23bd-435e-9dd6-87a80b9569ab/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65426 - "OPTIONS /history/2283173f-23bd-435e-9dd6-87a80b9569ab/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:65426 - "GET /history/2283173f-23bd-435e-9dd6-87a80b9569ab/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     14.195.80.242:49370 - "GET /history/2283173f-23bd-435e-9dd6-87a80b9569ab/input?page=1&limit=50 HTTP/1.1" 200 OK
+/application/.local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../pipeline/classifier.py:90: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  df[col].astype(str)
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     50.65.136.195:59294 - "GET / HTTP/1.1" 200 OK
+INFO:     184.74.180.2:50573 - "GET / HTTP/1.1" 200 OK
+INFO:     3.129.187.38:32778 - "GET / HTTP/1.1" 200 OK
+INFO:     3.129.187.38:45386 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     147.185.132.99:57498 - "GET / HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "POST /token HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "GET /history?product_group=CARDAN_SHAFT HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /history?product_group=STEEL_SHOT HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "GET /history?product_group=STEEL_SHOT HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /history/18317d2f-d109-4055-9622-7be590be1797/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "OPTIONS /history/18317d2f-d109-4055-9622-7be590be1797/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:24002 - "GET /history/18317d2f-d109-4055-9622-7be590be1797/processed?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     115.246.136.211:30496 - "GET /history/18317d2f-d109-4055-9622-7be590be1797/input?page=1&limit=50 HTTP/1.1" 200 OK
+INFO:     159.65.219.252:33907 - "GET / HTTP/1.1" 200 OK
+INFO:     49.37.47.232:60065 - "POST /token HTTP/1.1" 401 Unauthorized
+INFO:     49.37.47.232:64773 - "POST /token HTTP/1.1" 200 OK
+INFO:     49.37.47.232:64773 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     49.37.47.232:64773 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     49.37.47.232:64773 - "OPTIONS /admin/products HTTP/1.1" 200 OK
+INFO:     49.37.47.232:64773 - "GET /admin/products HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "OPTIONS /process/start-refinement HTTP/1.1" 200 OK
+
+🚀 Starting MACO Pipeline for file: /application/int_analytics_suite/maco/backend/api/uploads/441c1a40-6f88-403f-a786-9fbb5c0bda43_Steel Shots - RAW.csv | Product Group: STEEL_SHOT
+
+======================================================================
+[0] Reading and Preprocessing Input CSV
+======================================================================
+detect_encoding: detected => ascii (confidence 1.0)
+File loaded: rows=15457 cols=15
+✅ Preprocessing complete — 15,457 rows, 17 columns
+
+======================================================================
+[2] Normalizing Company / Model Data
+======================================================================
+Running normalization...
+Normalization complete.
+✅ Normalization done — Columns: 23
+
+======================================================================
+[2.5] Standardizing Units & Quantities (KGS/PCS -> NOS)
+======================================================================
+✅ Unit conversion complete
+
+======================================================================
+[3] Extracting Product Features (STEEL_SHOT Logic)
+======================================================================
+
+[3.1] Loading ML Product Classifier (if available)
+[+] Product classification model loaded: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/product_pipeline.pkl
+Extracting structured fields from 15457 rows using [STEEL_SHOT] logic...
+🔹 Applying STEEL_SHOT specific logic...
+Feature extraction complete.
+✅ Extraction done
+
+======================================================================
+[4] Running Relevancy Classifier
+======================================================================
+Loaded model from /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../models/relevancy_classifier_v1.joblib
+Imputed NaN values in 'product_description' (with '') and ['unit_price', 'quantity'] (with 0).
+Predicted relevancy for 15457 rows
+✅ Classification complete
+
+======================================================================
+[5] Running Post-Classification Validation
+======================================================================
+
+[5] Running data validation and business checks...
+Validation complete with 3578 issues
+   Detailed report: output/audit/audit_report_20260319_065858.csv
+   Summary report:  output/audit/audit_summary_20260319_065858.csv
+✅ Validation complete — 3578 issues logged
+
+======================================================================
+[6] Exporting Final Results
+======================================================================
+💾 Saved final processed file to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/processed_20260319_065858.csv
+💾 Saved audit report to: /application/int_analytics_suite/maco/backend/src/maco_automation/pipeline/../../../output/audit/audit_report_20260319_065858.csv
+
+🎯 Pipeline completed successfully!
+INFO:     49.37.47.232:58596 - "POST /process/start-refinement HTTP/1.1" 200 OK
+🔄 Job 441c1a40-6f88-403f-a786-9fbb5c0bda43: Refining rows 50-100...
+INFO:     49.37.47.232:58596 - "OPTIONS /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:58596 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:53287 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:52497 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:57507 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:51130 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK
+INFO:     49.37.47.232:59729 - "GET /process/poll/441c1a40-6f88-403f-a786-9fbb5c0bda43?offset=50 HTTP/1.1" 200 OK

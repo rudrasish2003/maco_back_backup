@@ -1,0 +1,45 @@
+﻿shipment_id,issue_type,column,details
+3699066055.0,Duplicate,shipment_id,Appears multiple times
+2610000000000000.0,Duplicate,shipment_id,Appears multiple times
+1410000000000000.0,Duplicate,shipment_id,Appears multiple times
+1310000000000000.0,Duplicate,shipment_id,Appears multiple times
+2110000000000000.0,Duplicate,shipment_id,Appears multiple times
+611000000000000.0,Duplicate,shipment_id,Appears multiple times
+712000000000000.0,Duplicate,shipment_id,Appears multiple times
+290000000000000.0,Duplicate,shipment_id,Appears multiple times
+2410000000000000.0,Duplicate,shipment_id,Appears multiple times
+610000000000000.0,Duplicate,shipment_id,Appears multiple times
+2210000000000000.0,Duplicate,shipment_id,Appears multiple times
+110000000000000.0,Duplicate,shipment_id,Appears multiple times
+2510000000000000.0,Duplicate,shipment_id,Appears multiple times
+8495577582.0,Duplicate,shipment_id,Appears multiple times
+3010000000000000.0,Duplicate,shipment_id,Appears multiple times
+1510000000000000.0,Duplicate,shipment_id,Appears multiple times
+112000000000000.0,Duplicate,shipment_id,Appears multiple times
+3110000000000000.0,Duplicate,shipment_id,Appears multiple times
+810000000000000.0,Duplicate,shipment_id,Appears multiple times
+280000000000000.0,Duplicate,shipment_id,Appears multiple times
+181000000000000.0,Duplicate,shipment_id,Appears multiple times
+2010000000000000.0,Duplicate,shipment_id,Appears multiple times
+2000000000000000.0,Duplicate,shipment_id,Appears multiple times
+6977674799.0,Duplicate,shipment_id,Appears multiple times
+171000000000000.0,Duplicate,shipment_id,Appears multiple times
+161000000000000.0,Duplicate,shipment_id,Appears multiple times
+2300000000000000.0,Duplicate,shipment_id,Appears multiple times
+2910000000000000.0,Duplicate,shipment_id,Appears multiple times
+60500000000000.0,Duplicate,shipment_id,Appears multiple times
+801000000000000.0,Duplicate,shipment_id,Appears multiple times
+907000000000000.0,Duplicate,shipment_id,Appears multiple times
+18000000000000.0,Duplicate,shipment_id,Appears multiple times
+2500000000000000.0,Duplicate,shipment_id,Appears multiple times
+6977320605.0,Duplicate,shipment_id,Appears multiple times
+6977320604.0,Duplicate,shipment_id,Appears multiple times
+212000000000000.0,Duplicate,shipment_id,Appears multiple times
+1100042067.0,Low Price,unit_price,Suspiciously low unit price (43.7)
+1151852833.0,Low Price,unit_price,Suspiciously low unit price (4.8)
+1166953973.0,Low Price,unit_price,Suspiciously low unit price (31.2)
+1144536492.0,Low Price,unit_price,Suspiciously low unit price (38.8)
+1174153532.0,Low Price,unit_price,Suspiciously low unit price (38.8)
+1144833085.0,Low Price,unit_price,Suspiciously low unit price (16.2)
+1035125973.0,Low Price,unit_price,Suspiciously low unit price (11.3)
+1240594051.0,Low Price,unit_price,Suspiciously low unit price (13.6)

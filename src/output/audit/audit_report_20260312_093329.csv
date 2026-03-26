@@ -1,0 +1,30 @@
+﻿shipment_id,issue_type,column,details
+3699066055,Duplicate,shipment_id,Appears multiple times
+653103040,Duplicate,shipment_id,Appears multiple times
+4094572381,Duplicate,shipment_id,Appears multiple times
+6301272144,Duplicate,shipment_id,Appears multiple times
+4094503716,Duplicate,shipment_id,Appears multiple times
+235617711,Duplicate,shipment_id,Appears multiple times
+235067282,Duplicate,shipment_id,Appears multiple times
+235617710,Duplicate,shipment_id,Appears multiple times
+6305812835,Duplicate,shipment_id,Appears multiple times
+6305812834,Duplicate,shipment_id,Appears multiple times
+6305812833,Duplicate,shipment_id,Appears multiple times
+6301272143,Duplicate,shipment_id,Appears multiple times
+6301272142,Duplicate,shipment_id,Appears multiple times
+6301272141,Duplicate,shipment_id,Appears multiple times
+6301272140,Duplicate,shipment_id,Appears multiple times
+6301272139,Duplicate,shipment_id,Appears multiple times
+6301272138,Duplicate,shipment_id,Appears multiple times
+6301272137,Duplicate,shipment_id,Appears multiple times
+1126344187,Low Price,unit_price,Suspiciously low unit price (0.43)
+653851380,Low Price,unit_price,Suspiciously low unit price (28.0)
+3700383295,Low Price,unit_price,Suspiciously low unit price (34.0)
+4233648543,Low Price,unit_price,Suspiciously low unit price (0.43)
+4704096509,Low Price,unit_price,Suspiciously low unit price (47.14)
+4704026505,Low Price,unit_price,Suspiciously low unit price (27.23)
+4703977310,Low Price,unit_price,Suspiciously low unit price (28.59)
+4704240597,Low Price,unit_price,Suspiciously low unit price (47.23)
+5313308754,Low Price,unit_price,Suspiciously low unit price (49.05)
+5314403776,Low Price,unit_price,Suspiciously low unit price (47.19)
+5314532980,Low Price,unit_price,Suspiciously low unit price (47.19)
