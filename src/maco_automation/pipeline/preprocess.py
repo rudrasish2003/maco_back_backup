@@ -121,7 +121,6 @@ def preprocess_csv(path, sample_n=5, encoding=None, dayfirst=False, drop_unnamed
     path_str = str(path).lower()
 
     # 1. Handle Excel Files
-  # 1. Handle Excel Files
     if path_str.endswith(('.xlsx', '.xls')):
         try:
             print(f"Reading as Excel: {path}")
@@ -131,7 +130,8 @@ def preprocess_csv(path, sample_n=5, encoding=None, dayfirst=False, drop_unnamed
             try:
                 # Fallback in case it's a CSV with a bad .xlsx extension
                 enc = encoding or detect_encoding(path)
-                df = pd.read_csv(path, encoding=enc, on_bad_lines="skip")
+                # FIX: Changed "skip" to "warn"
+                df = pd.read_csv(path, encoding=enc, on_bad_lines="warn")
             except Exception as e2:
                 raise ValueError(f"Failed to read file as both Excel and CSV: {e2}")
 
@@ -142,16 +142,19 @@ def preprocess_csv(path, sample_n=5, encoding=None, dayfirst=False, drop_unnamed
 
         # Try reading with fallback encodings
         try:
-            df = pd.read_csv(path, encoding=enc, on_bad_lines="skip")
+            # FIX: Changed "skip" to "warn"
+            df = pd.read_csv(path, encoding=enc, on_bad_lines="warn")
         except UnicodeDecodeError:
             print(f"Failed with detected encoding '{enc}'. Retrying with latin1...")
-            df = pd.read_csv(path, encoding="latin1", on_bad_lines="skip")
+            # FIX: Changed "skip" to "warn"
+            df = pd.read_csv(path, encoding="latin1", on_bad_lines="warn")
         except Exception as e:
             print(f"Failed reading CSV with {enc}: {e}")
             print("Trying fallback encodings utf-8-sig → cp1252 → latin1")
             for fallback in ["utf-8-sig", "cp1252", "latin1"]:
                 try:
-                    df = pd.read_csv(path, encoding=fallback, on_bad_lines="skip")
+                    # FIX: Changed "skip" to "warn"
+                    df = pd.read_csv(path, encoding=fallback, on_bad_lines="warn")
                     print(f"Fallback successful with {fallback}")
                     break
                 except Exception:

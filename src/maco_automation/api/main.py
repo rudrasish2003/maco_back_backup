@@ -13,6 +13,7 @@ from typing import Optional, List, Dict, Any
 import pdfplumber
 import gridfs
 import tempfile
+import concurrent.futures
 
 # --- FASTAPI IMPORTS ---
 from fastapi import FastAPI, File, UploadFile, HTTPException, Query, Form, Body, Depends, status,BackgroundTasks
@@ -73,7 +74,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # --- MONGODB ATLAS CONFIGURATION ---
-MONGO_URI = "mongodb+srv://info_db_user:T9j4ZOpejvbh6MA8@cluster0.8aptjw.mongodb.net/?appName=Cluster0"
+MONGO_URI = " "
 
 if not MONGO_URI:
     raise ValueError("MONGO_URI not found in environment variables")
@@ -886,26 +887,24 @@ def process_remaining_batches(job_id: str, product_group: str):
     job = JOB_STORE[job_id]
     df = job["data_queue"]
     
-    # [FIX 2] Start at row 0 and reduce batch size to 25 to prevent token cutoffs
-    curr_idx = 0
-    batch_size = 25
+    batch_size = 10
     
-    # A. Process Loop
-    while curr_idx < len(df):
-        next_idx = min(curr_idx + batch_size, len(df))
-        batch_df = df.iloc[curr_idx:next_idx].copy()
-        
-        print(f"🔄 Job {job_id}: Refining rows {curr_idx}-{next_idx}...")
-        
-        # Blocking call (Safe in threadpool)
-        refined_batch = refine_batch(batch_df, product_group)
-        
-        job["refined_results"].extend(refined_batch.to_dict(orient="records"))
-        job["processed_rows"] += len(batch_df)
-        curr_idx += batch_size
-        
-        time.sleep(0.5) 
-        
+    # 1. Split the dataframe into a list of smaller chunk dataframes
+    batches = [df.iloc[i:i + batch_size].copy() for i in range(0, len(df), batch_size)]
+    
+    print(f"🚀 Job {job_id}: Starting parallel refinement for {len(batches)} batches...")
+
+    # Helper function for the thread pool
+    def process_chunk(chunk_df):
+        return refine_batch(chunk_df, product_group)
+
+    # 2. Process up to 5 batches concurrently!
+    # Removing 'list()' allows it to yield results continuously to your UI poll
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+        for refined_batch in executor.map(process_chunk, batches):
+            job["refined_results"].extend(refined_batch.to_dict(orient="records"))
+            job["processed_rows"] += len(refined_batch)
+
     # B. SAVE TO MONGODB & GRIDFS
     print(f"💾 Saving Job {job_id} to MongoDB...")
     try:

@@ -265,11 +265,17 @@ def extract_manufacturer(desc: str) -> Optional[str]:
 # [CHANGED] Updated signature from `str | None` to `Optional[str]`
 def extract_condition(desc: str) -> Optional[str]:
     """Detect if item is New / Used / Refurbished."""
+    if not isinstance(desc, str):
+        return None
+        
     desc = clean_desc(desc)
-    for condition, words in CONDITION_KEYWORDS.items():
-        for w in words:
-            if w.upper() in desc:
-                return condition.capitalize()
+    
+    # [CRITICAL FIX] Correctly iterate over the flat {keyword: target} map
+    for keyword, target_condition in CONDITION_KEYWORDS.items():
+        # Look for the exact keyword with word boundaries so "OLD" doesn't trigger on "FOLD"
+        if re.search(r'\b' + re.escape(keyword.upper()) + r'\b', desc):
+            return target_condition.capitalize()
+            
     return None
 
 
@@ -353,8 +359,13 @@ def extract_features(df: pd.DataFrame, product_group: str = "ROTARY_UNION") -> p
     # Context (Spare/Unit) & Condition
     # [NEW LOGIC] Pass the product_group dynamically into the context detector
     df["Spare / Unit / Others"] = df["product_description"].apply(lambda x: detect_context(x, product_group))
-    df["type"] = df["product_description"].apply(extract_condition)
-    df["Extracted_Condition"] = df["type"] 
+    
+    # 👇 [CRITICAL FIX] Stop forcing "Old/New" into the 'type' column globally
+    df["Extracted_Condition"] = df["product_description"].apply(extract_condition)
+    
+    # Only use the 'type' column for Condition if the product is LIFT
+    if product_group.upper() == "LIFT":
+        df["type"] = df["Extracted_Condition"]
 
     # 2. PRODUCT COLUMN LOGIC
     # DEFAULT: Set Product = User Input (product_group)
@@ -369,13 +380,18 @@ def extract_features(df: pd.DataFrame, product_group: str = "ROTARY_UNION") -> p
 
     elif product_group.upper() == "LIFT":
         print("🔹 Applying LIFT-specific extractors...")
+        
+        # 1. Category is populated independently (e.g., AWP, SCISSOR LIFT)
         df["category"] = df["product_description"].apply(extract_lift_category)
+        
+        # 2. Other specific specs
         df["Battery/Diesel"] = df["product_description"].apply(extract_fuel)
         df["Height (ft)"] = df["product_description"].apply(extract_height)
         df["YOM"] = df["product_description"].apply(extract_yom)
         
-        mask_lift_units = (df["category"].notna()) & (df["Spare / Unit / Others"].isin(["Unit", "Unit + Spare"]))
-        df.loc[mask_lift_units, "Product"] = "AWP"
+        # [FIX] Commented out the override below so Product strictly remains 'LIFT' for all rows
+        # mask_lift_units = (df["category"].notna()) & (df["Spare / Unit / Others"].isin(["Unit", "Unit + Spare"]))
+        # df.loc[mask_lift_units, "Product"] = "AWP"
 
     elif product_group.upper() == "STEEL_SHOT":
         print("🔹 Applying STEEL_SHOT specific logic...")
