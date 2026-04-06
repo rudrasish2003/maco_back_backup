@@ -13,6 +13,7 @@ from pipeline.normalize import normalize_dataset
 from pipeline.unit_converter import standardize_units
 from pipeline.extractor import extract_features, load_product_model
 from pipeline.classifier import load_model, predict_relevancy
+from pipeline.llm_refiner import refine_batch  # [NEW] Import LLM Refiner
 from pipeline.validator import validate_dataset
 
 # --- Configuration ---
@@ -95,7 +96,16 @@ def run_pipeline(input_path: str, output_dir: str = OUTPUT_DIR, product_group: s
             print("✅ Classification complete")
         else:
             print(f"⚠️ Model not found at {MODEL_PATH}. Skipping Relevancy Classification.")
-            df['Relevancy'] = 'Unknown'
+            df['Relevancy'] = 'Relevant' # Safest default fallback
+
+        # ---------------------------------------------------------------
+        # [4.5] LLM REFINEMENT
+        # ---------------------------------------------------------------
+        print("\n" + "=" * 70)
+        print("[4.5] Running LLM Data Refinement & Applying Fallbacks")
+        print("=" * 70)
+        df = refine_batch(df, product_group)
+        print("✅ LLM Refinement & Fallbacks complete")
 
         # ---------------------------------------------------------------
         # [5] VALIDATION
@@ -112,11 +122,29 @@ def run_pipeline(input_path: str, output_dir: str = OUTPUT_DIR, product_group: s
         print(f"✅ Validation complete — {len(audit_df)} issues logged")
 
         # ---------------------------------------------------------------
-        # [6] EXPORT RESULTS
+        # [6] FORMATTING & EXPORT RESULTS
         # ---------------------------------------------------------------
         print("\n" + "=" * 70)
-        print("[6] Exporting Final Results")
+        print("[6] Formatting and Exporting Final Results")
         print("=" * 70)
+
+        # --- ALIGN COLUMNS (Input First, Processed After) ---
+        # Known processed columns to push to the right
+        processed_cols = [
+            "Seller Group", "Buyer Group", "Manufacturer", "Model", "Product", 
+            "category", "Type", "Application", "Spare / Unit / Others", 
+            "Battery/Diesel", "Height (ft)", "YOM", "Relevancy", "Match_Score",
+            "Normalized_Model_Internal", "Unit_Normalized", "Extracted_Condition"
+        ]
+        
+        all_cols = list(df.columns)
+        # Identify original input columns (anything not in the processed list)
+        input_cols = [c for c in all_cols if c not in processed_cols]
+        
+        # Reorder dataframe: Input Columns -> Processed Columns
+        final_col_order = input_cols + [c for c in processed_cols if c in all_cols]
+        df = df[final_col_order]
+
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         # Save Processed File

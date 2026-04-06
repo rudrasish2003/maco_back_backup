@@ -74,7 +74,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # --- MONGODB ATLAS CONFIGURATION ---
-MONGO_URI = " "
+MONGO_URI = "mongodb+srv://info_db_user:T9j4ZOpejvbh6MA8@cluster0.8aptjw.mongodb.net/?appName=Cluster0"
 
 if not MONGO_URI:
     raise ValueError("MONGO_URI not found in environment variables")
@@ -1536,7 +1536,218 @@ def delete_product_group(req: DeleteEntityRequest, current_user: dict = Depends(
         if res.deleted_count > 0: return {"message": "Deleted"}
         raise HTTPException(status_code=404, detail="Not found")
     except errors.PyMongoError as e: raise HTTPException(status_code=500, detail=str(e))
+    
+import re
 
+
+ 
+
+@app.post("/process/direct-upload")
+def direct_upload_processed_file(
+    file: UploadFile = File(...),
+    product_group: str = Form(...),
+    current_user: dict = Depends(get_current_user) # Optional: secures the endpoint
+):
+    if collection_history is None or collection_processed is None or fs is None:
+        raise HTTPException(status_code=500, detail="Database connection not available")
+
+    upload_id = str(uuid.uuid4())
+    timestamp = datetime.now()
+    
+    try:
+        # 1. Read the file
+        file_bytes = file.file.read()
+        filename_lower = file.filename.lower()
+        
+        if filename_lower.endswith(('.xlsx', '.xls')):
+            df = pd.read_excel(io.BytesIO(file_bytes))
+        else:
+            try:
+                df = pd.read_csv(io.BytesIO(file_bytes), encoding="utf-8-sig")
+            except UnicodeDecodeError:
+                df = pd.read_csv(io.BytesIO(file_bytes), encoding="latin1")
+
+        if df.empty:
+            raise HTTPException(status_code=400, detail="Uploaded file is empty.")
+
+        print(f"\n--- [DIRECT UPLOAD STARTED] ---")
+        print(f"RAW COLUMNS FROM FILE: {list(df.columns)}")
+
+        # --- 2. Dynamic Column Cleanup ---
+        EXPECTED_COLS = [
+            "Seller Group", "Buyer Group", "Manufacturer", "Model", "Product", 
+            "category", "Type", "Application", "Spare / Unit / Others", 
+            "Battery/Diesel", "Height (ft)", "YOM", "Relevancy", "Match_Score",
+            "Normalized_Model_Internal", "Unit_Normalized", "Extracted_Condition",
+            "product_description", "quantity", "unit_price", "valueusd", "hs_code", 
+            "shipment_id", "buyer_country", "destination_port", "seller_country", 
+            "origin_port", "seller", "buyer", "industry", "date", "unit"
+        ]
+        
+        def aggressive_clean(c):
+            s = str(c).lower().replace("ï", "")
+            return re.sub(r'[^a-z0-9]', '', s)
+            
+        core_map = {aggressive_clean(c): c for c in EXPECTED_COLS}
+        core_map["valueusd"] = "valueusd"
+        core_map["value"] = "valueusd"
+        core_map["qty"] = "quantity"
+        core_map["unitprice"] = "unit_price"
+        core_map["height"] = "Height (ft)"
+        core_map["batterydiesel"] = "Battery/Diesel"
+
+        cols_to_keep_original = []
+        new_col_names = []
+        seen_core_concepts = set()
+        seen_exact_names = set()
+
+        for original_col in df.columns:
+            base_name = str(original_col).strip()
+            if re.search(r'\.\d+$', base_name):
+                base_name = base_name.rsplit('.', 1)[0]
+                
+            cleaned_name = aggressive_clean(base_name)
+
+            # EXPLICIT BLOCKLIST: Destroy these garbage columns instantly
+            if cleaned_name in ['extradata', 'unnamed0', 'id', 'unnamed1']:
+                continue
+
+            if cleaned_name in core_map:
+                core_concept = core_map[cleaned_name]
+                if core_concept in seen_core_concepts:
+                    continue # Drops the duplicate!
+                    
+                seen_core_concepts.add(core_concept)
+                final_name = core_concept 
+            else:
+                final_name = base_name 
+
+            safe_name = final_name
+            counter = 1
+            while safe_name in seen_exact_names:
+                safe_name = f"{final_name}_{counter}"
+                counter += 1
+                
+            seen_exact_names.add(safe_name)
+            cols_to_keep_original.append(original_col)
+            new_col_names.append(safe_name)
+
+        df = df[cols_to_keep_original].copy()
+        df.columns = new_col_names
+        
+        print(f"CLEANED COLUMNS BEING SAVED: {list(df.columns)}")
+        print(f"-------------------------------\n")
+
+        # --- 3. Duplicate Checking ---
+        initial_row_count = len(df)
+        duplicates_removed = 0
+        
+        check_cols_target = ["product_description", "buyer", "seller", "quantity", "valueusd", "unit_price"]
+        valid_cols = [c for c in check_cols_target if c in df.columns]
+
+        if valid_cols:
+            projection = {col: 1 for col in valid_cols}
+            projection["_id"] = 0
+            
+            existing_cursor = collection_processed.find(
+                {"product_group": product_group, "data_type": "processed"},
+                projection
+            )
+            existing_data = list(existing_cursor)
+
+            if existing_data:
+                existing_df = pd.DataFrame(existing_data)
+                valid_cols = [c for c in valid_cols if c in existing_df.columns]
+                
+                if valid_cols:
+                    def create_fingerprint(df_subset):
+                        temp = df_subset.copy()
+                        numeric_cols = ['quantity', 'valueusd', 'unit_price']
+                        for col in numeric_cols:
+                            if col in temp.columns:
+                                temp[col] = (
+                                    pd.to_numeric(temp[col], errors='coerce')
+                                    .fillna(0).round(2).apply(lambda x: "{:.2f}".format(x))
+                                )
+                        text_cols = [c for c in temp.columns if c not in numeric_cols]
+                        for col in text_cols:
+                            temp[col] = (
+                                temp[col].astype(str).str.lower()
+                                .str.replace(r'[^a-z0-9]', '', regex=True)
+                                .replace(['nan', 'none', ''], 'empty')
+                            )
+                        return temp
+
+                    input_fing = create_fingerprint(df[valid_cols])
+                    existing_fing = create_fingerprint(existing_df[valid_cols]).drop_duplicates()
+                    merged = input_fing.merge(existing_fing, on=valid_cols, how='left', indicator=True)
+                    
+                    if '_indicator' in merged.columns:
+                        mask = (merged['_indicator'] == 'left_only')
+                        df = df[mask.values].copy().reset_index(drop=True)
+                        duplicates_removed = initial_row_count - len(df)
+
+        if df.empty:
+            return JSONResponse({
+                "status": "skipped",
+                "message": "All rows in this file are duplicates based on existing processed data.",
+                "duplicates_removed": duplicates_removed
+            })
+
+        # --- 4. Save to GridFS & DB ---
+        csv_buffer = io.StringIO()
+        df.to_csv(csv_buffer, index=False, encoding="utf-8-sig")
+        csv_bytes = csv_buffer.getvalue().encode('utf-8-sig')
+        
+        safe_filename = f"{timestamp.strftime('%Y%m%d_%H%M%S')}_{file.filename}"
+        processed_file_id = fs.put(
+            csv_bytes, 
+            filename=safe_filename, 
+            upload_id=upload_id,
+            type="processed",
+            product_group=product_group
+        )
+
+        df["upload_id"] = upload_id
+        df["source_filename"] = file.filename
+        df["upload_timestamp"] = timestamp
+        df["data_type"] = "processed"
+        df["product_group"] = product_group
+
+        records = sanitize_dataframe_for_mongo(df)
+        if records:
+            collection_processed.insert_many(records)
+
+        history_entry = {
+            "upload_id": upload_id,
+            "filename": file.filename,
+            "gridfs_raw_id": str(processed_file_id),       
+            "gridfs_processed_id": str(processed_file_id), 
+            "timestamp": timestamp,
+            "rows_input": initial_row_count,
+            "rows_processed": len(df),
+            "audit_issues": 0, 
+            "duplicates_removed": duplicates_removed,
+            "status": "success",
+            "review_status": "complete", 
+            "product_group": product_group,
+            "ai_refined": False,
+            "upload_method": "direct" 
+        }
+        collection_history.insert_one(history_entry)
+
+        return JSONResponse({
+            "status": "success",
+            "upload_id": upload_id,
+            "rows_processed": len(df),
+            "duplicates_removed": duplicates_removed,
+            "message": "File successfully uploaded and stored exactly as uploaded.",
+            "product_group": product_group,
+            "review_status": "complete"
+        })
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Direct upload failed: {str(e)}")
 # --- 2. DICTIONARY TYPES & REFRESH ---
 
 @app.get("/admin/dictionary-types")

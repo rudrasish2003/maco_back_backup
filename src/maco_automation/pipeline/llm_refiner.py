@@ -314,44 +314,60 @@ def refine_batch(df_batch: pd.DataFrame, product_group: str) -> pd.DataFrame:
                 continue 
 
     # --- 7. EXPLICIT FALLBACK MECHANISM ---
-    # If the LLM left things blank, and the manual automation also didn't catch it, 
-    # we forcefully apply raw data fallbacks so the final CSV has no empty holes.
+    # We forcefully apply fallbacks in this order: LLM -> Manual Automation -> Raw Input. 
+    # If all three fail, we leave the cell blank naturally.
     
     for idx, row in final_batch.iterrows():
         # Helper to check if a cell is truly blank
         def is_blank(val):
             return pd.isna(val) or str(val).strip().upper() in bad_outputs
 
-        # 1. Seller Group Fallback -> Inject Raw Seller Name
+        # Mapping of Final Output Column -> Manual Automation Column
+        manual_fallbacks = {
+            "Manufacturer": "Manufacturer",
+            "Model": "Normalized_Model_Internal", # from normalize.py
+            "Type": "Extracted_Condition",        # from extractor.py
+            "Application": "Application",         # from extractor.py
+            "Spare / Unit / Others": "Spare / Unit / Others",
+            "Relevancy": "Relevancy",             # from classifier.py
+            "Seller Group": "Seller Group",       # from normalize.py
+            "Buyer Group": "Buyer Group",         # from normalize.py
+            "Category": "category"                # from extractor.py
+        }
+
+        # Step A: Fallback to Manual Automation
+        for llm_col, manual_col in manual_fallbacks.items():
+            actual_llm_col = next((c for c in final_batch.columns if c.lower() == llm_col.lower()), llm_col)
+            actual_man_col = next((c for c in final_batch.columns if c.lower() == manual_col.lower()), None)
+            
+            # If LLM missed it, but manual automation caught it, use manual.
+            if is_blank(row.get(actual_llm_col)) and actual_man_col and not is_blank(row.get(actual_man_col)):
+                final_batch.at[idx, actual_llm_col] = row[actual_man_col]
+
+        # Step B: Fallback to Raw Input Columns
         seller_col = next((c for c in final_batch.columns if c.lower() == 'seller'), None)
         seller_group_col = next((c for c in final_batch.columns if c.lower() == 'seller group'), 'Seller Group')
-        
         if is_blank(row.get(seller_group_col)) and seller_col and not is_blank(row.get(seller_col)):
             final_batch.at[idx, seller_group_col] = str(row[seller_col]).upper().strip()
 
-        # 2. Buyer Group Fallback -> Inject Raw Buyer Name
         buyer_col = next((c for c in final_batch.columns if c.lower() == 'buyer'), None)
         buyer_group_col = next((c for c in final_batch.columns if c.lower() == 'buyer group'), 'Buyer Group')
-        
         if is_blank(row.get(buyer_group_col)) and buyer_col and not is_blank(row.get(buyer_col)):
             final_batch.at[idx, buyer_group_col] = str(row[buyer_col]).upper().strip()
-            
-        # 3. Manufacturer Fallback -> Defaults to whatever is in Seller Group
+
         manu_col = next((c for c in final_batch.columns if c.lower() == 'manufacturer'), 'Manufacturer')
-        if is_blank(row.get(manu_col)):
-            final_batch.at[idx, manu_col] = final_batch.at[idx, seller_group_col]
+        if is_blank(row.get(manu_col)) and not is_blank(row.get(seller_group_col)):
+            final_batch.at[idx, manu_col] = final_batch.at[idx, seller_group_col] # Mirror seller if no manufacturer
             
-        # 4. Spare / Unit / Others -> Default to "Others"
+        # Step C: Hardcoded Safety Nets for Critical Status Fields
         suo_col = next((c for c in final_batch.columns if c.lower() == 'spare / unit / others'), 'Spare / Unit / Others')
         if is_blank(row.get(suo_col)):
             final_batch.at[idx, suo_col] = "Others"
             
-        # 5. Relevancy -> Default to "Relevant"
         rel_col = next((c for c in final_batch.columns if c.lower() == 'relevancy'), 'Relevancy')
         if is_blank(row.get(rel_col)):
             final_batch.at[idx, rel_col] = "Relevant"
 
-        # 6. LIFT Condition Default -> "New"
         if product_group.upper() == "LIFT":
             type_col = next((c for c in final_batch.columns if c.lower() == 'type'), 'Type')
             if is_blank(row.get(type_col)):
